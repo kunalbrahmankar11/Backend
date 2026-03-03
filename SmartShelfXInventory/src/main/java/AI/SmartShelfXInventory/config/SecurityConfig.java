@@ -13,7 +13,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // disable CSRF for simplicity
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/**").permitAll() // allow all your APIs
+                        .requestMatchers("/api/auth/**").permitAll() // allow all your APIs
                         .anyRequest().authenticated()
                 )
                 .cors(cors -> {}); // enable CORS
